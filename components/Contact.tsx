@@ -32,7 +32,7 @@ export default function InsiderForm() {
 
           {/* TEXTO */}
           <div className="max-w-[560px]">
-            <h2 className="text-4xl lg:text-4xl font-light leading-tight text-[#8E7563] tracking-wide mb-10">
+            <h2 className="text-3xl lg:text-4xl font-light leading-tight text-[#8E7563] tracking-wide mb-10">
               Garanta acesso ao tour
               <br />
               com o Óculos Insider
