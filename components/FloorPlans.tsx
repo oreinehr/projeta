@@ -9,32 +9,32 @@ const floorPlans = [
   {
     thumb: "/images/PLANTA1.png",
     full: "/images/PLANTA1_FULL.jpeg",
-    desc: "Planta 1 – 3 suítes com living integrado.",
+
   },
   {
     thumb: "/images/PLANTA2.png",
     full: "/images/PLANTA2_FULL.jpeg",
-    desc: "Planta 2 – Opção com home office.",
+   
   },
   {
     thumb: "/images/PLANTA3.png",
     full: "/images/PLANTA3_FULL.jpeg",
-    desc: "Planta 3 – Cozinha ampliada.",
+
   },
   {
     thumb: "/images/PLANTA4.png",
     full: "/images/PLANTA4_FULL.jpeg",
-    desc: "Planta 4 – Varanda gourmet.",
+  
   },
   {
     thumb: "/images/PLANTA5.png",
     full: "/images/PLANTA5_FULL.jpeg",
-    desc: "Planta 5 – Suíte master com closet.",
+
   },
   {
     thumb: "/images/PLANTA6.png",
     full: "/images/PLANTA6_FULL.jpeg",
-    desc: "Planta 6 – Integração total dos ambientes.",
+
   },
   {
     thumb: "/images/PLANTA7.png",
@@ -44,22 +44,22 @@ const floorPlans = [
   {
     thumb: "/images/PLANTA8.png",
     full: "/images/PLANTA8_FULL.jpeg",
-    desc: "Planta 8 – Layout otimizado.",
+
   },
   {
     thumb: "/images/PLANTA9.png",
     full: "/images/PLANTA9_FULL.jpeg",
-    desc: "Planta 9 – Área social ampliada.",
+
   },
   {
     thumb: "/images/PLANTA10.png",
     full: "/images/PLANTA10_FULL.jpeg",
-    desc: "Planta 10 – Cozinha com ilha.",
+
   },
   {
     thumb: "/images/PLANTA11.png",
     full: "/images/PLANTA11_FULL.jpeg",
-    desc: "Planta 11 – Suítes independentes.",
+
   },
 ];
 
