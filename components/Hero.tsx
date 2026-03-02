@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Container from "./Container";
 
@@ -46,9 +48,17 @@ export default function Hero() {
               Um projeto com apenas 25 unidades residenciais.
             </p>
 
-            <button className="mt-4 border border-[#CBB6A1] text-[#CBB6A1] px-8 py-3 rounded-full text-sm tracking-[0.08em] uppercase transition-all duration-300 hover:bg-[#CBB6A1] hover:text-white">
-              Quero acesso exclusivo!
-            </button>
+          <button
+  onClick={() =>
+    window.open(
+      "https://wa.me/555121656555?text=Ol%C3%A1!%20Quero%20acesso%20exclusivo%20ao%20Flag.%20Pode%20me%20enviar%20mais%20informa%C3%A7%C3%B5es%20e%20valores%3F",
+      "_blank"
+    )
+  }
+  className="mt-4 border border-[#CBB6A1] text-[#CBB6A1] px-8 py-3 rounded-full text-sm tracking-[0.08em] uppercase transition-all duration-300 hover:bg-[#CBB6A1] hover:text-white"
+>
+  Quero acesso exclusivo!
+</button>
 
           </div>
         </Container>

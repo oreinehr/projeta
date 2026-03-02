@@ -24,7 +24,7 @@ export default function Gallery() {
 
         {/* Linha 1 — 40% | 60% */}
         <div className="grid md:grid-cols-[40%_60%] gap-[10px]">
-          <div className="relative h-[500px]">
+          <div className="relative h-[420px] md:h-[500px]">
             <Image
               src="/images/gallery-1.jpg"
               alt=""
@@ -33,7 +33,7 @@ export default function Gallery() {
             />
           </div>
 
-          <div className="relative h-[500px]">
+          <div className="relative h-[420px] md:h-[500px]">
             <Image
               src="/images/gallery-2.jpg"
               alt=""
@@ -43,19 +43,19 @@ export default function Gallery() {
           </div>
         </div>
 
-        {/* Linha 2 — 100% */}
-        <div className="relative h-[650px]">
+        {/* Linha 2 — 100% (IMAGEM LARGA CORRIGIDA) */}
+        <div className="relative w-full aspect-[4/3] md:h-[650px]">
           <Image
             src="/images/gallery-3.jpg"
             alt=""
             fill
-            className="object-cover"
+            className="object-cover object-center"
           />
         </div>
 
         {/* Linha 3 — 60% | 40% */}
         <div className="grid md:grid-cols-[60%_40%] gap-[10px]">
-          <div className="relative h-[500px]">
+          <div className="relative h-[420px] md:h-[500px]">
             <Image
               src="/images/gallery-4.jpg"
               alt=""
@@ -64,7 +64,7 @@ export default function Gallery() {
             />
           </div>
 
-          <div className="relative h-[500px]">
+          <div className="relative h-[420px] md:h-[500px]">
             <Image
               src="/images/gallery-5.jpg"
               alt=""
