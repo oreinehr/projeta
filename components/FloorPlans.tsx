@@ -5,36 +5,37 @@ import Image from "next/image";
 import Container from "./Container";
 import useEmblaCarousel from "embla-carousel-react";
 
-const floorPlans = [
+// ✅ Tipo centralizado (escala melhor)
+type Plan = {
+  thumb: string;
+  full: string;
+  desc?: string;
+};
+
+const floorPlans: Plan[] = [
   {
     thumb: "/images/PLANTA1.png",
     full: "/images/PLANTA1_FULL.jpeg",
-
   },
   {
     thumb: "/images/PLANTA2.png",
     full: "/images/PLANTA2_FULL.jpeg",
-   
   },
   {
     thumb: "/images/PLANTA3.png",
     full: "/images/PLANTA3_FULL.jpeg",
-
   },
   {
     thumb: "/images/PLANTA4.png",
     full: "/images/PLANTA4_FULL.jpeg",
-  
   },
   {
     thumb: "/images/PLANTA5.png",
     full: "/images/PLANTA5_FULL.jpeg",
-
   },
   {
     thumb: "/images/PLANTA6.png",
     full: "/images/PLANTA6_FULL.jpeg",
-
   },
   {
     thumb: "/images/PLANTA7.png",
@@ -44,22 +45,18 @@ const floorPlans = [
   {
     thumb: "/images/PLANTA8.png",
     full: "/images/PLANTA8_FULL.jpeg",
-
   },
   {
     thumb: "/images/PLANTA9.png",
     full: "/images/PLANTA9_FULL.jpeg",
-
   },
   {
     thumb: "/images/PLANTA10.png",
     full: "/images/PLANTA10_FULL.jpeg",
-
   },
   {
     thumb: "/images/PLANTA11.png",
     full: "/images/PLANTA11_FULL.jpeg",
-
   },
 ];
 
@@ -70,16 +67,12 @@ export default function FloorPlans() {
     dragFree: true,
   });
 
-  const [selectedPlan, setSelectedPlan] = useState<null | {
-    thumb: string;
-    full: string;
-    desc: string;
-  }>(null);
+  // ✅ Tipagem corrigida
+  const [selectedPlan, setSelectedPlan] = useState<Plan | null>(null);
 
   return (
     <section className="bg-[#CBB6A1] py-24 text-white">
       <Container>
-
         {/* CARROSSEL */}
         <div className="mb-24">
           <div className="overflow-hidden" ref={emblaRef}>
@@ -87,7 +80,7 @@ export default function FloorPlans() {
               {floorPlans.map((plan, index) => (
                 <button
                   key={index}
-                  onClick={() => setSelectedPlan(plan)}
+                  onClick={() => setSelectedPlan({ ...plan })}
                   className="flex-[0_0_85%] lg:flex-[0_0_55%] flex justify-center cursor-pointer"
                 >
                   <Image
@@ -141,38 +134,41 @@ export default function FloorPlans() {
 
         {/* MODAL */}
         {selectedPlan && (
-  <div
-    className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4"
-    onClick={() => setSelectedPlan(null)}
-  >
-    <div
-      className="relative w-full max-w-4xl max-h-[90vh] bg-white rounded-2xl p-4 md:p-6 flex flex-col items-center"
-      onClick={(e) => e.stopPropagation()}
-    >
-      <button
-        onClick={() => setSelectedPlan(null)}
-        className="absolute top-3 right-3 text-black text-xl"
-      >
-        ✕
-      </button>
+          <div
+            className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4"
+            onClick={() => setSelectedPlan(null)}
+          >
+            <div
+              className="relative w-full max-w-4xl max-h-[90vh] bg-white rounded-2xl p-4 md:p-6 flex flex-col items-center"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                onClick={() => setSelectedPlan(null)}
+                className="absolute top-3 right-3 text-black text-xl"
+              >
+                ✕
+              </button>
 
-      <div className="w-full h-full flex items-center justify-center overflow-auto">
-        <Image
-          src={selectedPlan.full}
-          alt="Planta ampliada"
-          width={2000}
-          height={1400}
-          className="w-auto h-auto max-w-full max-h-[75vh] object-contain"
-          priority
-        />
-      </div>
+              <div className="w-full h-full flex items-center justify-center overflow-auto">
+                <Image
+                  src={selectedPlan.full}
+                  alt="Planta ampliada"
+                  width={2000}
+                  height={1400}
+                  className="w-auto h-auto max-w-full max-h-[75vh] object-contain"
+                  priority
+                />
+              </div>
 
-      <p className="mt-4 text-sm text-black/70 text-center">
-        {selectedPlan.desc}
-      </p>
-    </div>
-  </div>
-)}
+              {/* ✅ Só renderiza se existir */}
+              {selectedPlan.desc && (
+                <p className="mt-4 text-sm text-black/70 text-center">
+                  {selectedPlan.desc}
+                </p>
+              )}
+            </div>
+          </div>
+        )}
       </Container>
     </section>
   );
