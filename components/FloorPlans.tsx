@@ -108,7 +108,7 @@ export default function FloorPlans() {
             <button
               onClick={() =>
                 window.open(
-                  "https://wa.me/555121656555?text=Ol%C3%A1!%20Quero%20acesso%20exclusivo%20ao%20Flag.%20Pode%20me%20enviar%20mais%20informa%C3%A7%C3%B5es%20e%20valores%3F",
+                  "https://wa.me/+555496757843?text=Ol%C3%A1!%20Quero%20acesso%20exclusivo%20ao%20Flag.%20Pode%20me%20enviar%20mais%20informa%C3%A7%C3%B5es%20e%20valores%3F",
                   "_blank"
                 )
               }
